@@ -9,7 +9,7 @@ for(const btn of alertmsg){
     
 
     if(coinNumber >= 20){
-        alert("Calling " + document.getElementsByClassName("sName"))
+        alert("Calling ");//+ document.getElementByClassName("sName").innerText + "...");
 
         let newCoinNumber = coinNumber - 20;
      document.getElementById("coin-number").innerText = newCoinNumber;
@@ -21,20 +21,17 @@ return newCoinNumber;}
 }
  })
 
+
 }
 
-
-
-
 //heart number update
-//const heart = document.getElementsByClassName("heartIcon")
-// function heartnumberUpdate(){
     const heart = document.getElementsByClassName("heartIcon");
-    const heartnum =Number (document.getElementById("heartNumber").innerText);
-    for(const num of heart){
-         
-        num.addEventListener("click",function(){
- newheartNumber = heartnum + 1;
+   for(const num of heart){
+        
+     num.addEventListener("click",function(){
+        const heartnum =Number (document.getElementById("heartNumber").innerText);
+let  newheartNumber = heartnum + 1;
+document.getElementById("heartNumber").innerText = newheartNumber;
 return newheartNumber
         })
     }
