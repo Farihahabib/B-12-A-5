@@ -22,6 +22,7 @@ return newCoinNumber;}
  })
 
 
+
 }
 
 //heart number update
@@ -36,10 +37,44 @@ return newheartNumber
         })
     }
 
+    //history section.....
+    const history = document.getElementsByClassName("call-btn");
+    for(const his of history){
+          function getElement(id){
+            const element = document.getElementById(id);
+            return element;
+          }
+      his.addEventListener("click",function(){
+        const serviceName = his.parentNode.parentNode.childNodes[1].childNodes[2].innerText;
+       const serviceNumber = his.parentNode.parentNode.childNodes[1].childNodes[6].innerText;
+  
+const cartContainer = getElement("cartContainer")
+     const newCart = document.createElement('div');
+     newCart.innerHTML = `
+     <div class ="bg-gray-200 rounded-md p-4 mt-3">
+     <h2 class = "font-bold">${serviceName}</h2>
+     <h2 class = "font-bold">${serviceNumber}</h2>
+</div>
+     `;
+       cartContainer.append(newCart)
+      })
+    
+    }
+// clearbutton section
+  //const clear = document.getElementById("cartContainer")
+const clearBtn = document.getElementById("clearbtn").addEventListener("click",function(){
+  const clear = document.getElementById("cartContainer")
 
-
-
-
+  if(clear){
+   clear.remove()
+  }
+  else{
+    alert("Nothing to clear")
+  }
+ 
+    
+    
+})
 
 
 

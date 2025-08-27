@@ -13,7 +13,7 @@
 </head>
 <body>
     <!-- nav section -->
-     <nav class="bg-white flex gap-10 md:justify-between p-4 shadow-md">
+     <nav class="bg-white flex justify-between md:justify-between p-4 shadow-md">
         <div class="flex items-center gap-2">
             <img src="./assets/logo.png" class="w-8" alt="">
             <h2 class="font-bold text-[#006747]">Emergency <br>
@@ -164,11 +164,13 @@
 
     
     </div>
-    <aside class="w-[90%] md:w-1/4 flex justify-between pt-4 bg-white mx-auto"> <div><i class="fa-solid fa-clock"></i>Call History </div>
+    <aside id="aside" class="w-[90%] md:w-1/4  pt-4 px-2 bg-white mx-auto"><div class="flex justify-between"> <div><i class="fa-solid fa-clock"></i> Call History </div>
         <div>
-    <button class="text-white bg-green-600 rounded-4xl px-6 py-2 font-semibold">Clear</button>
+    <button id="clearbtn" class="text-white bg-green-600 rounded-4xl px-6 py-2 font-semibold">Clear</button>
 
 </div>
+</div>
+<div id="cartContainer"></div>
 </aside>
 </main>
 <!-- script js link -->
