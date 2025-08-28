@@ -3,23 +3,51 @@ console.log(document)
 const alertmsg = document.getElementsByClassName("call-btn");
 const coinNumber = Number(document.getElementById("coin-number").innerText);
 for(const btn of alertmsg){
+   function getElement(id){
+            const element = document.getElementById(id);
+            return element;
+          }
    
  btn.addEventListener("click", function(){
     let coinNumber = Number(document.getElementById("coin-number").innerText);
     
 
     if(coinNumber >= 20){
-     // const alertmsgs = document.getElementsByClassName("call-btn");
-       const serviceName = btn.parentNode.parentNode.childNodes[1].childNodes[2];
+    
+       const serviceName = btn.parentNode.parentNode.childNodes[1].childNodes[2].innerText;
        
            
-        const serviceNumber = btn.parentNode.parentNode.childNodes[1].childNodes[6];
+        const serviceNumber = btn.parentNode.parentNode.childNodes[1].childNodes[6].innerText;
   
-         alert("📞Calling " + serviceName.innerText +" " + serviceNumber.innerText +"......."); 
+         alert("📞Calling " + serviceName +" " + serviceNumber+"......."); 
+           const time = new Date();
+
+const currentTime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+        console
+const cartContainer = getElement("cartContainer")
+     const newCart = document.createElement('div');
+     newCart.innerHTML = `
+     <div class ="bg-gray-100 rounded-md p-4 mt-3 flex justify-between items-center">
+     <div class = "text-left">
+     <h2 class = "font-bold">${serviceName}</h2>
+     <h2 class = "font-bold">${serviceNumber}</h2>
+     </div>
+     <div class = "text-right">${currentTime}</div>
+</div>
+     `;
+       cartContainer.append(newCart)
+       // clearbtn
+     const clearBtn = document.getElementById("clearbtn").addEventListener("click",function(){
+ cartContainer.innerHTML = ``;
+
+     })
+
+      
 
          let newCoinNumber = coinNumber - 20;
       document.getElementById("coin-number").innerText = newCoinNumber;
  return newCoinNumber;}
+  
     
   else{
   
@@ -27,11 +55,10 @@ for(const btn of alertmsg){
 
  }
 }
-)
-
-
-
+ )
 }
+
+
 
 //heart number update
     const heart = document.getElementsByClassName("heartIcon");
@@ -71,44 +98,4 @@ document.body.removeChild(temptextarea);
 }
 )
     }
-
-                                      //history section.....
-
-    const history = document.getElementsByClassName("call-btn");
-    for(const his of history){
-          function getElement(id){
-            const element = document.getElementById(id);
-            return element;
-          }
-      his.addEventListener("click",function(){
-        const serviceName = his.parentNode.parentNode.childNodes[1].childNodes[2].innerText;
-       const serviceNumber = his.parentNode.parentNode.childNodes[1].childNodes[6].innerText;
-  const time = new Date();
-const currentTime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
-        console
-const cartContainer = getElement("cartContainer")
-     const newCart = document.createElement('div');
-     newCart.innerHTML = `
-     <div class ="bg-gray-100 rounded-md p-4 mt-3 flex justify-between items-center">
-     <div class = "text-left">
-     <h2 class = "font-bold">${serviceName}</h2>
-     <h2 class = "font-bold">${serviceNumber}</h2>
-     </div>
-     <div class = "text-right">${currentTime}</div>
-</div>
-     `;
-       cartContainer.append(newCart)
-      })
-      // clearbtn
-    const clearBtn = document.getElementById("clearbtn").addEventListener("click",function(){
-cartContainer.innerHTML = ``;
-
-    })}
-
-
- 
-
-
-
-
 
