@@ -27,7 +27,7 @@ const currentTime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSe
 const cartContainer = getElement("cartContainer")
      const newCart = document.createElement('div');
      newCart.innerHTML = `
-     <div class ="bg-gray-100 rounded-md p-4 mt-3 flex justify-between items-center">
+     <div class ="bg-gray-100 rounded-md p-4 my-3 flex justify-between items-center">
      <div class = "text-left">
      <h2 class = "font-bold">${serviceName}</h2>
      <h2 class = "font-bold">${serviceNumber}</h2>
@@ -51,7 +51,7 @@ const cartContainer = getElement("cartContainer")
     
   else{
   
-          alert("You dont have sufficient coin to call. You need atleast 20 coin to make a call.")
+          alert(" ❌ You dont have sufficient coin to call. You need atleast 20 coin to make a call.")
 
  }
 }
@@ -80,9 +80,10 @@ return newheartNumber
 
 
       copy.addEventListener("click",function(){
+
   
  const copyNumber = copy.parentNode.parentNode.childNodes[1].childNodes[6].innerText;
-
+        alert("✅ Number Copied " + copyNumber); 
  const temptextarea = document.createElement("textarea");
 temptextarea.value = copyNumber;
 document.body.appendChild(temptextarea);
